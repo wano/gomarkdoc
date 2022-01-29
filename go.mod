@@ -1,4 +1,4 @@
-module github.com/princjef/gomarkdoc
+module github.com/wano/gomarkdoc
 
 go 1.16
 
@@ -33,4 +33,7 @@ require (
 	golang.org/x/term v0.0.0-20210503060354-a79de5458b56 // indirect
 	gopkg.in/ini.v1 v1.62.0 // indirect
 	mvdan.cc/xurls/v2 v2.2.0
+	github.com/princjef/gomarkdoc v0.0.0-00010101000000-000000000000
 )
+
+replace github.com/princjef/gomarkdoc => ./
