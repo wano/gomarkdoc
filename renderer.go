@@ -26,7 +26,7 @@ type (
 
 // NewRenderer initializes a Renderer configured using the provided options. If
 // nothing special is provided, the created renderer will use the default set of
-// templates and the GitHubFlavoredMarkdown.
+// templates and the BitBucketMarkdown.
 func NewRenderer(opts ...RendererOption) (*Renderer, error) {
 	renderer := &Renderer{
 		templateOverrides: make(map[string]string),

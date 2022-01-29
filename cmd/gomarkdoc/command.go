@@ -356,6 +356,8 @@ func resolveOverrides(opts commandOptions) ([]gomarkdoc.RendererOption, error) {
 		f = &format.AzureDevOpsMarkdown{}
 	case "plain":
 		f = &format.PlainMarkdown{}
+	case "bitbucket":
+		f = &format.BitBucketMarkdown{}
 	default:
 		return nil, fmt.Errorf("gomarkdoc: invalid format: %s", opts.format)
 	}
