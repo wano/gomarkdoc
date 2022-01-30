@@ -1,4 +1,4 @@
-module github.com/wano/gomarkdoc
+module github.com/princjef/gomarkdoc
 
 go 1.16
 
