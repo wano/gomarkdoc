@@ -4,6 +4,21 @@
 // levels, exporting both exported and unexported symbols, and custom formatters
 // for different backends.
 //
+// モジュール名変えずに変えずに fork したので go install できない。ので 以下の通りMakefileなどに記載
+//
+//	install-gomarkdoc:
+//		rm -rf /tmp/gomarkdoc || true
+//		mkdir -p /tmp/gomarkdoc
+//		cd /tmp/gomarkdoc && git clone https://github.com/wano/gomarkdoc.git && \
+//			cd gomarkdoc && \
+//			go install ./...
+//
+// 以下の通り生成
+//
+//		//go:generate  gomarkdoc --format bitbucket --embed --repository.url "https://bitbucket.org/wanocoltd/vkgo_petrigo_delivery"  --output ./godoc.md
+//
+//
+//
 // Command Line Usage
 //
 // If you want to use this package as a command-line tool, you can install the

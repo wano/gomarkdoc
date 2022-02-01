@@ -8,10 +8,27 @@
 # gomarkdoc
 
 ```go
-import "github.com/princjef/gomarkdoc"
+import "github.com/wano/gomarkdoc"
 ```
 
 Package gomarkdoc formats documentation for one or more packages as markdown for usage outside of the main https://pkg.go.dev site\. It supports custom templates for tweaking representation of documentation at fine\-grained levels\, exporting both exported and unexported symbols\, and custom formatters for different backends\.
+
+モジュール名変えずに変えずに fork したので go install できない。ので 以下の通りMakefileなどに記載
+
+```
+install-gomarkdoc:
+	rm -rf /tmp/gomarkdoc || true
+	mkdir -p /tmp/gomarkdoc
+	cd /tmp/gomarkdoc && git clone https://github.com/wano/gomarkdoc.git && \
+		cd gomarkdoc && \
+		go install ./...
+```
+
+以下の通り生成
+
+```
+//go:generate  gomarkdoc --format bitbucket --embed --repository.url "https://bitbucket.org/wanocoltd/vkgo_petrigo_delivery"  --output ./godoc.md
+```
 
 ### Command Line Usage
 
@@ -265,7 +282,7 @@ type Renderer struct {
 func NewRenderer(opts ...RendererOption) (*Renderer, error)
 ```
 
-NewRenderer initializes a Renderer configured using the provided options\. If nothing special is provided\, the created renderer will use the default set of templates and the GitHubFlavoredMarkdown\.
+NewRenderer initializes a Renderer configured using the provided options\. If nothing special is provided\, the created renderer will use the default set of templates and the BitBucketMarkdown\.
 
 ### func \(\*Renderer\) [Example](<https://github.com/princjef/gomarkdoc/blob/master/renderer.go#L140>)
 
