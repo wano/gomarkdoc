@@ -27,7 +27,7 @@ install-gomarkdoc:
 以下の通り生成
 
 ```
-//go:generate  gomarkdoc --format bitbucket --embed --repository.url "https://bitbucket.org/wanocoltd/vkgo_petrigo_delivery"  --output ./godoc.md
+//go:generate  gomarkdoc --format bitbucket --embed --repository.url "https://bitbucket.org/<author>/<repo>"  --output ./godoc.md
 ```
 
 ### Command Line Usage
